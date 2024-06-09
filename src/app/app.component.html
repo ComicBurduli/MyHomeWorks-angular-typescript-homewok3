@@ -1,0 +1,20 @@
+<div>
+  <h1>Pick Your Favorite Item Tier List</h1>
+  <div *ngFor="let item of items" [ngSwitch]="item.tier">
+    <div *ngSwitchCase="'S Tier'">
+      <button (click)="selectItem(item)">S Tier: {{ item.name }}</button>
+    </div>
+    <div *ngSwitchCase="'A Tier'">
+      <button (click)="selectItem(item)">A Tier: {{ item.name }}</button>
+    </div>
+    <div *ngSwitchCase="'B Tier'">
+      <button (click)="selectItem(item)">B Tier: {{ item.name }}</button>
+    </div>
+    <div *ngSwitchCase="'C Tier'">
+      <button (click)="selectItem(item)">C Tier: {{ item.name }}</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="selectedItem">
+  <p>You selected: {{ selectedItem.name }}</p>
+</div>
